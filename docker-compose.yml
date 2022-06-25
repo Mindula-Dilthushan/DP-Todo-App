@@ -10,3 +10,5 @@ services:
     build: ,
     depends_on:
       - db
+    links:
+      - "db:dptodoappserver"
