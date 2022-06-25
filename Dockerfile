@@ -10,6 +10,7 @@ COPY main.py ./
 
 #ENTRYPOINT ["python"]
 
-EXPOSE 5000
-
 CMD ["python", "main.py"]
+
+EXPOSE 5000/tcp
+
