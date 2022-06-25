@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  db:
+    image: "mysql:8.0.29"
+    environment:
+      - MYSQL_ROOT_PASSWORD=1023
+    ports:
+      - "3306:3306"
+  web:
+    build: ,
+    depends_on:
+      - db
+    ports:
+      - "5000:5000"
+    links:
+      - "db:dptodoappserver"
+
+#version: '3.9'
+#services:
+#  web:
+#    build: .
+#  db:
+#    image: "mysql:8.0.29"
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=1023
+#      - MYSQL_DATABASE=todo_app_db
+#    ports:
+#      - "3306:3306"
